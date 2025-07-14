@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Task</title>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: black;
+    }
+    button {
+      padding: 10px;
+      margin: 5px;
+      background-color: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    button:hover {
+      background-color: darkblue;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">مرحباً</h1>
+  <button id="change-language">غير اللغة</button>
+  <button id="change-bg">غير الخلفية</button>
+
+  <script>
+    const title = document.getElementById("main-title");
+    const changeLanguageBtn = document.getElementById("change-language");
+    const changeBgBtn = document.getElementById("change-bg");
+
+    changeLanguageBtn.addEventListener("click", function() {
+      title.textContent = "أهلاً بك في الجافاسكريبت";
+    });
+
+    changeBgBtn.addEventListener("click", function() {
+      document.body.style.backgroundColor = "#fdd";
+    });
+  </script>
+
+</body>
+</html>

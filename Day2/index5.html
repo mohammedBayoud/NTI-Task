@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تقييم الدرجات</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #955;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            direction: rtl;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .result-box {
+            margin: 20px;
+            padding: 15px;
+            background-color: #733;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            font-size: 16px;
+            width: 150px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 17px;
+            margin-top: 10px;
+            background-color: #622;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #411;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Mohammed Bayoud</h1>
+
+    <label for="grade">أدخل الدرجة (من 0 إلى 100):</label><br>
+    <input type="number" id="grade" min="0" max="100"><br>
+
+    <button onclick="calculateGrade()">احسب التقدير</button>
+
+    <div class="result-box" id="result"></div>
+
+    <script>
+        function calculateGrade() {
+            const grade = parseFloat(document.getElementById('grade').value);
+            const result = document.getElementById('result');
+            if (grade > 100){
+                result.textContent = "الرجاء إدخال درجة صحيحة بين 0 و 100.";
+            }
+            else if (grade >= 90) {
+                result.textContent = "ممتاز";
+            } else if (grade >= 80) {
+                result.textContent = "جيد جداً";
+            } else if (grade >= 70) {
+                result.textContent = "جيد";
+            }
+            else if (grade >=50) {
+                result.textContent = "مقبول"
+            }
+             else if (grade >= 0) {
+                result.textContent = "ضعيف";
+            } else {
+                result.textContent = "الرجاء إدخال درجة صحيحة بين 0 و 100.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
