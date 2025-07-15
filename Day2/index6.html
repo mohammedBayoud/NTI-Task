@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحة ترحيبية</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 30px;
+    }
+    .welcome {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .form-container {
+      margin: 20px auto;
+      width: 300px;
+    }
+    input {
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    #message {
+      color: green;
+      margin-top: 15px;
+    }
+    table {
+      margin: 30px auto;
+      border-collapse: collapse;
+    }
+    td, th {
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+    }
+    th {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="welcome" id="welcomeText">أهلاً بك في موقعنا!</div>
+
+  <div class="form-container">
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" id="nameInput" placeholder="اكتب اسمك هنا">
+      <input type="submit" value="إرسال">
+    </form>
+    <div id="message"></div>
+  </div>
+
+  <table>
+    <tr>
+      <th>رابط</th>
+      <th>الوصف</th>
+    </tr>
+    <tr>
+      <td><a href="#">الرئيسية</a></td>
+      <td>الصفحة الرئيسية للموقع</td>
+    </tr>
+    <tr>
+      <td><a href="#">معلومات عنا</a></td>
+      <td>معلومات عن الموقع</td>
+    </tr>
+    <tr>
+      <td><a href="#">اتصل بنا</a></td>
+      <td>طرق التواصل</td>
+    </tr>
+  </table>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("nameInput").value.trim();
+      const welcomeText = document.getElementById("welcomeText");
+      const messageBox = document.getElementById("message");
+
+      if (name) {
+        welcomeText.textContent = `مرحباً يا ${name}!`;
+        messageBox.textContent = `شرفتنا بزيارتك يا ${name}.`;
+      } else {
+        messageBox.textContent = "من فضلك أدخل اسمك.";
+      }
+    }
+  </script>
+
+</body>
+</html>
