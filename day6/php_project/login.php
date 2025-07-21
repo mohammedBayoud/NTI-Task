@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'functions.php';
+require 'functions.php' ;
 
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
