@@ -35,8 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="alert alert-danger"><?= $error ?></div>
                     <?php endif; ?>
                     <form method="post">
-                        <input type="text" name="username" class="form-control mb-2" placeholder="Username" required>
-                        <input type="password" name="password" class="form-control mb-2" placeholder="Password" required>
+                        <input type="text" name="username" class="form-control mb-2" placeholder="Username" value="MohammedBayoud" required>
+                        <input type="password" name="password" class="form-control mb-2" placeholder="Password" value="123" required>
                         <button class="btn btn-primary w-100">Login</button>
                     </form>
                 </div>
