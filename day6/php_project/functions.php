@@ -7,7 +7,7 @@ function check_login($username, $password) {
 }
 
 function log_login($username, $status) {
-    $file = __DIR__ . '/logs/login_log.csv' ;
+    $file = __DIR__ . '/logs/login_log.csv';
     $date = date('Y-m-d H:i:s');
     $row = [$date, $username, $status];
     $fp = fopen($file, 'a');
