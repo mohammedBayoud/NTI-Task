@@ -23,7 +23,6 @@ function logFileUpload($username, $type, $fullPath, $mime) {
     fclose($file);
 }
 
-// محاكاة تسجيل الدخول
 $username = $_POST['username'] ?? '';
 $fileType = $_POST['filetype'] ?? '';
 
@@ -71,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file']) && in_array(
 
 <div class="container mt-5">
 
-    <h2 class="text-center mb-4">🔐 File Manager</h2>
+    <h2 class="text-center mb-4">File Manager</h2>
 
     <form method="POST" class="card p-4 mb-4">
         <h5>👤 Login</h5>
@@ -84,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file']) && in_array(
 
     <?php if (isset($username) && in_array($username, $_SESSION['allowed_users'])): ?>
         <form method="POST" enctype="multipart/form-data" class="card p-4">
-            <h5>📤 Upload File</h5>
+            <h5>Upload File</h5>
             <input type="hidden" name="username" value="<?= htmlspecialchars($username) ?>">
             <div class="mb-3">
                 <label for="filetype" class="form-label">File Type (avatar / product)</label>
